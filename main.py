@@ -25,6 +25,7 @@ def notfound():
 def delay():
 	time.sleep(10)
 	return 'Delay Airline', 200
+
 @app.route('/home')
 def home():
 	return 'Welcome Home', 200
@@ -38,5 +39,9 @@ def calculator():
 		result = eval(expression)
 		return render_template('calculator.html', result=result)
 
+@app.route('/internal')
+def internal():
+	return 'Internal Error', 500
+	
 monitor(app, port=8000)
 app.run()

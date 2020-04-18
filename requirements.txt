@@ -1,2 +1,4 @@
 flask_prometheus==0.0.1
 Flask==1.1.1
+prometheus_client==0.7.1
+uwsgi==2.0.18
