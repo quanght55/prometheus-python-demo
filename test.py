@@ -5,12 +5,12 @@ url = 'http://localhost:5000'
 authen = {'username': 'admin', 'password':'admin'}
 unauthen = {'username': 'admin', 'password':'dasdasdn'}
 
-endpoints = ["/", "/notfound", "/delay", "/home", "/internal"]
+endpoints = ["/", "/notfound","/internal"]
 
 while True:
   endpoint = random.choice(endpoints)
   if ( endpoint == "/"):
-    passwords = ["admin","wrongpass"]
+    passwords = ["wrongpass"]
     password = random.choice(passwords)
     x = requests.post("%s%s" %(url, endpoint), data = {"username": "admin", "password": password})
   # elif ( endpoint == "/calculator"):
@@ -20,4 +20,4 @@ while True:
   else:
     x = requests.get("%s%s" %(url, endpoint))
   print(x)
-  time.sleep(3)
+  time.sleep(1)
